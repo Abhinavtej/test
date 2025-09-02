@@ -1,15 +1,17 @@
-def factorial(n: int) -> int:
-    """Return the factorial of n (n!)."""
-    if n < 0:
+"""A simple module to calculate factorial of a number."""
+
+def factorial(number: int) -> int:
+    """Return the factorial of a given number."""
+    if number < 0:
         raise ValueError("Factorial is not defined for negative numbers")
-    if n in (0, 1):
+    if number in (0, 1):
         return 1
-    return n * factorial(n - 1)
+    return number * factorial(number - 1)
 
 
 if __name__ == "__main__":
     try:
-        number = int(input("Enter a positive integer: "))
-        print(f"Factorial of {number} is {factorial(number)}")
-    except ValueError as e:
-        print("Error:", e)
+        user_input = int(input("Enter a positive integer: "))
+        print(f"Factorial of {user_input} is {factorial(user_input)}")
+    except ValueError as error:
+        print("Error:", error)
